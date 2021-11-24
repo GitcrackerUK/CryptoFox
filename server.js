@@ -9,6 +9,18 @@ app.use(cors())
 app.get('/', function (req, res) {
   res.send('CryptoFox')
 })
+app.get('/getStats', function (req, res) {
+
+  axios.get(`${POOL_URL}${WALLET_ADDRESS}?coin=${COIN}`)
+  .then(function (response) {
+
+    res.send(response.data) 
+  })
+  .catch(function (error) {
+    // console.log(error.response);
+  })
+
+})
 
 
 app.listen(Port,()=>{
