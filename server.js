@@ -4,6 +4,8 @@ const app = express()
 const cors = require('cors')
 
 const Port = 5000
+app.use(cors())
+
 app.get('/', function (req, res) {
   res.send('Hello World')
 })
